@@ -1,5 +1,3 @@
-# GhostScriptPDF – Compresor Automático de PDFs en PowerShell
-
 **GhostScriptPDF** es un script en PowerShell creado por **Daniel Amores**.  
 Está diseñado para **comprimir archivos PDF** en carpetas, **reemplazar los originales solo si el comprimido es más pequeño**, y **mostrar el ahorro total en espacio**, con una lógica muy cuidada y visual.  
 
@@ -88,14 +86,16 @@ El script:
 
 Imagina que tienes esta estructura:
 
+```plaintext
 C:\Documentos\Proyecto
 ├── PDF1.pdf (3 MB)
 ├── PDF2.pdf (5 MB)
 ├── ClienteA
-│ ├── ReporteA.pdf (10 MB)
-│ └── ReporteB.pdf (8 MB)
+│   ├── ReporteA.pdf (10 MB)
+│   └── ReporteB.pdf (8 MB)
 ├── ClienteB
-│ └── Informe.pdf (4 MB)
+│   └── Informe.pdf (4 MB)
+```
 
 
 Si usas el script con:
