@@ -167,6 +167,7 @@ function ProcesarCarpeta {
 
 # MAIN
 # Solicitar al usuario la ruta de destino
+Write-Host "GhostScriptPDF v0.80 by Daniel Amores`n" -ForegroundColor Cyan
 $ruta = Read-Host "Introduzca la ruta absoluta"
 
 if (-Not (Test-Path -LiteralPath $ruta)) {
