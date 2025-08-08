@@ -6,7 +6,7 @@ function ProcesarCarpeta {
 		[ref]$ahorroTotal
     )
 	
-	Write-Host "`n>>> Procesando carpeta: " -NoNewline -ForegroundColor Cyan
+	Write-Host ">>> Procesando carpeta: " -NoNewline -ForegroundColor Cyan
 	Write-Host "$($carpeta.Name)"
 	
 	# Accede a la carpeta
@@ -181,6 +181,7 @@ $carpetaRaiz = Get-Item -LiteralPath $ruta
 $basePath = Get-Location
 
 # Obtener todas las subcarpetas directas
+Write-Host ">>> Subcarpetas" -ForegroundColor Cyan
 $subcarpetas = Get-ChildItem -LiteralPath $ruta -Directory
 
 # Almacena el ahorro total en bytes
@@ -188,8 +189,7 @@ $ahorroTotal = 0
 
 # En caso de no encontrar subcarpetas
 if ($subcarpetas.Count -eq 0){
-	Write-Host ">>> ERROR: " -NoNewline -ForegroundColor Red
-	Write-Host "No se encontraron subcarpetas directas en $ruta"
+	Write-Host ">>> No se encontraron subcarpetas directas" -ForegroundColor Yellow
 }
 
 # Procesa las carpetas
@@ -198,6 +198,7 @@ foreach ($carpeta in $subcarpetas){
 }
 
 # Procesa la carpeta inicial
+Write-Host "`n>>> Carpeta raiz" -ForegroundColor Cyan
 ProcesarCarpeta -carpeta $carpetaRaiz -basepath $basepath -ahorroTotal ([ref]$ahorroTotal)
 
 # Muestra el resumen final
